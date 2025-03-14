@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center mt-3 overflow-hidden bg-secondary dark:bg-[#0d0d0d]">
+    <section id="home" className="relative min-h-screen flex items-center justify-center  overflow-hidden bg-secondary dark:bg-[#0d0d0d]">
       {/* Background shapes */}
       <FloatingShapes />
 
