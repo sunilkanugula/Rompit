@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { Link, useLocation } from 'react-router-dom';
-import logo from "../assests/rompit.png"
+import logo from "../assests/rompit.png";
+
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
     };
   }, [isMenuOpen]);
 
-  // Navbar links - conditional based on whether we're on homepage
+  // Navbar links
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
@@ -53,19 +54,18 @@ const Navbar: React.FC = () => {
   const handleNavLinkClick = () => {
     setIsMenuOpen(false);
   };
-  
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/90 backdrop-blur-lg shadow-md py-3' : 'py-5'
-      }`}
+        isScrolled ? 'shadow-md py-3' : 'py-5'
+      } bg-white dark:bg-black`}
     >
       <div className="max-container flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2  cursor-pointer">
+        <Link to="/" className="flex items-center gap-2 cursor-pointer">
           <div className="font-bold text-xl md:text-2xl">
             <img src={logo} alt="logo" className='h-20'/>
-    
           </div>
         </Link>
 
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu */}
         <div
           id="mobile-menu"
-          className={`fixed inset-0 top-[68px] bg-background z-40 transform transition-transform duration-300 ease-in-out ${
+          className={`fixed inset-0 top-[68px] bg-white dark:bg-black z-40 transform transition-transform duration-300 ease-in-out ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -132,16 +132,14 @@ const Navbar: React.FC = () => {
               ))}
             </ul>
             <div className="mt-auto">
-            <a
-  href="https://discord.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full flex justify-center bg-rompit text-white px-4 py-3 rounded-md font-medium hover:bg-rompit-600 transition-colors duration-200 focus-ring hover-glow"
->
-  Join Discord
-</a>
-
-
+              <a
+                href="https://discord.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex justify-center bg-rompit text-white px-4 py-3 rounded-md font-medium hover:bg-rompit-600 transition-colors duration-200 focus-ring hover-glow"
+              >
+                Join Discord
+              </a>
             </div>
           </nav>
         </div>
