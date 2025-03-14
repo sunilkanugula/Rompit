@@ -35,7 +35,7 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen">
       <AnimatedCursor />
-      <Navbar />
+    
       <main>
         <Hero />
         <About />

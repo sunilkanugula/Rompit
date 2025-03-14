@@ -87,8 +87,8 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-background">
-      <div className="max-container">
+    <section id="contact" ref={sectionRef} className="bg-background">
+      <div className="max-container mt-10">
         <div className="text-center mb-12">
           <h2 className="animate-on-scroll">Let's Connect</h2>
           <p className="animate-on-scroll stagger-delay-1 max-w-2xl mx-auto mt-4 text-lg text-muted-foreground">

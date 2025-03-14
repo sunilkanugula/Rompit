@@ -111,7 +111,7 @@ const TeamPage: React.FC = () => {
   return (
     <div className="min-h-screen">
        <AnimatedCursor />
-      <Navbar />
+    
       <main>
         <section className="py-24 bg-secondary dark:bg-[#363636]">
           <div className="max-container text-center">

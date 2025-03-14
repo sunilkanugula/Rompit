@@ -8,9 +8,8 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
-  // Handle scroll event to add shadow and background to navbar
+  // Handle scroll event to add shadow and adjust padding
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -24,7 +23,11 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (isMenuOpen && !target.closest('#mobile-menu') && !target.closest('#menu-trigger')) {
+      if (
+        isMenuOpen &&
+        !target.closest('#mobile-menu') &&
+        !target.closest('#menu-trigger')
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -56,16 +59,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'shadow-md py-3' : 'py-5'
       } bg-white dark:bg-black`}
     >
-      <div className="max-container flex items-center justify-between">
+      <div className="max-container flex items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
           <div className="font-bold text-xl md:text-2xl">
-            <img src={logo} alt="logo" className='h-20'/>
+            <img src={logo} alt="logo" className="h-20" />
           </div>
         </Link>
 
@@ -74,9 +77,9 @@ const Navbar: React.FC = () => {
           <ul className="flex gap-6">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <Link 
+                <Link
                   to={link.href}
-                  className="text-sm font-medium relative hover:text-rompit transition-colors duration-200 py-2"
+                  className="text-sm md:text-lg font-medium relative hover:text-rompit transition-colors duration-200 py-2"
                   onClick={handleNavLinkClick}
                 >
                   {link.name}
@@ -85,12 +88,12 @@ const Navbar: React.FC = () => {
               </li>
             ))}
           </ul>
-          
+
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <Link 
-              to="#" 
-              className="bg-rompit text-white px-4 py-2 rounded-md font-medium hover:bg-rompit-600 transition-colors duration-200 focus-ring hover-glow"
+            <Link
+              to="#"
+              className="bg-rompit text-white px-4 py-2 rounded-md font-medium hover:bg-rompit-600 transition-colors duration-200 focus-ring hover-glow text-sm md:text-lg"
             >
               Join Discord
             </Link>
@@ -106,10 +109,14 @@ const Navbar: React.FC = () => {
             className="p-2 rounded-md hover:bg-muted transition-colors duration-200 focus-ring"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
-        
+
         {/* Mobile Menu */}
         <div
           id="mobile-menu"

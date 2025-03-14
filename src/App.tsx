@@ -32,7 +32,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
        
-        
+        <Navbar/>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<AboutPage />} />

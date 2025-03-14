@@ -67,7 +67,7 @@ const BenefitsPage: React.FC = () => {
   return (
     <div className="min-h-screen">
        <AnimatedCursor />
-      <Navbar />
+      
       <main>
         <section className="py-24 bg-secondary dark:bg-[#313131]">
           <div className="max-container text-center">

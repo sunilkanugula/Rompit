@@ -82,7 +82,7 @@ const ContactPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <AnimatedCursor/>
-      <Navbar />
+      
       <main>
         <section className="py-24 bg-secondary dark:bg-[#c4c5c10a]">
           <div className="max-container text-center">

@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-secondary dark:bg-black">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-0 overflow-hidden bg-secondary dark:bg-[#0d0d0d]">
       {/* Background shapes */}
       <FloatingShapes />
 
@@ -42,7 +42,8 @@ const Hero: React.FC = () => {
           ref={titleRef}
           className="animate-on-scroll text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight mb-6 md:mb-8"
         >
-          Welcome to <span className="text-gradient hover-pop">ROMPIT</span>
+          Welcome to <span className="text-gradient hover-pop">ROMPIT TECHNOLOGIES
+          </span>
         </h1>
 
         {/* Subtitle */}
@@ -50,7 +51,7 @@ const Hero: React.FC = () => {
           ref={subtitleRef}
           className="animate-on-scroll stagger-delay-1 text-xl md:text-2xl mb-10 md:mb-12 max-w-2xl text-balance"
         >
-          Innovating the Future of Gaming & Web3
+         Innovating the Future of Gaming , Web3 & AI applications
         </p>
 
         {/* CTA Button */}
