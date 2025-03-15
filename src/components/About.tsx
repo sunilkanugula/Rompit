@@ -97,7 +97,7 @@ const About: React.FC = () => {
         <div className="mt-12 text-center animate-on-scroll stagger-delay-4">
           <a
             href="/about"
-            className="inline-flex items-center text-rompit hover:text-rompit-600 font-medium transition-colors duration-200"
+            className="inline-flex items-center text-rompit hover:text-rompit-600 font-medium transition-colors duration-200 cursor-pointer"
           >
             <span>Learn More</span>
             <svg
