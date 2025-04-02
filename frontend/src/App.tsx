@@ -21,6 +21,8 @@ import Team from '@/components/Team';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Partners from "./components/Parnters";
+import PortfolioPage from "./pages/Portfolio";
+import Portfolio from "./pages/Portfolio";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,7 @@ const App = () => (
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/portfolio" element={<Portfolio/>} />
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
